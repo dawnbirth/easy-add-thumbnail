@@ -18,7 +18,7 @@ No options page to setup, simply install and activate.
 
 = Features =
 
-* Simply avoids you to add post thumbnail one by one to every post if you uploaded an image when you did the post.
+* Simply avoids you to set the post thumbnail one by one to every post if you uploaded an image when you did the post.
 
 = Requirements =
 
