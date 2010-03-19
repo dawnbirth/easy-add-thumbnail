@@ -12,7 +12,7 @@ Checks if you defined the post thumbnail, and if not it sets the thumbnail to th
 
 Checks if you defined the post thumbnail, and if not it sets the thumbnail to the first uploaded image for that post. So easy like that...
 
-It does his job dinamically, so the thumbnails are defined only when needed.
+It does his job dinamically, so the thumbnails are sets only when needed to show them in the frontend. This means that the thumbnail is set (only first time) when a visitor loads the page where it needs to be shown.
 
 No options page to setup, simply install and activate.
 
