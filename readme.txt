@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: thumbnail, thumbnails
 Requires at least: 2.9
 Tested up to: 2.9.2
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 Checks if you defined the post thumbnail, and if not it sets the thumbnail to the first uploaded image for that post. So easy like that...
 
@@ -12,7 +12,11 @@ Checks if you defined the post thumbnail, and if not it sets the thumbnail to th
 
 Checks if you defined the post thumbnail, and if not it sets the thumbnail to the first uploaded image for that post. So easy like that...
 
-It does his job dinamically, so the thumbnails are sets only when needed to show them in the frontend. This means that the thumbnail is set (only first time) when a visitor loads the page where it needs to be shown.
+It does his job in two cases:
+
+1. Dinamically, for old published posts, the thumbnails are sets only when needed to show them in the frontend. This means that the thumbnail is set (only first time) when a visitor loads the page where it needs to be shown.
+
+2. For new posts, it sets the thumbnail just in the publishing process.
 
 No options page to setup, simply install and activate.
 
@@ -42,9 +46,13 @@ I did it to fullfil the needs of one of my customers.
 
 = Are you planning to add more features? =
 
-Maybe not, but who knows...
+At first not, but who knows...
 
 == Changelog ==
+
+= 1.0.1 =
+
+* Hooks added to set the thumbnail when publishing too.
 
 = 1.0 =
 

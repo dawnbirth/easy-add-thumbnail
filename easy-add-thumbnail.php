@@ -48,6 +48,12 @@ add_theme_support( 'post-thumbnails' );
       } // fin función
 
   add_action('the_post', 'easy_add_thumbnail');
+ 
+  // hooks added to set the thumbnail when publishing too
+  add_action('new_to_publish', 'easy_add_thumbnail');
+  add_action('draft_to_publish', 'easy_add_thumbnail');
+  add_action('pending_to_publish', 'easy_add_thumbnail');
+  add_action('future_to_publish', 'easy_add_thumbnail');
 
 } else {
 
