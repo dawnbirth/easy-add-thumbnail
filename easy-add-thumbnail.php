@@ -4,7 +4,7 @@ Plugin Name: Easy Add Thumbnail
 Plugin URI: http://wordpress.org/extend/plugins/easy-add-thumbnail/
 Description: Checks if you defined the post thumbnail, and if not it sets the thumbnail to the first uploaded image for that post. So easy like that...
 Author: Samuel Aguilera
-Version: 1.0
+Version: 1.0.1
 Author URI: http://www.samuelaguilera.com
 */
 
