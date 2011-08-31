@@ -3,7 +3,7 @@ Contributors: samuelaguilera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8ER3Y2THBMFV6
 Tags: thumbnail, thumbnails
 Requires at least: 2.9
-Tested up to: 3.1
+Tested up to: 3.2.1
 Stable tag: 1.0.1
 
 Checks if you defined the post thumbnail, and if not it sets the thumbnail to the first uploaded image for that post. So easy like that...
