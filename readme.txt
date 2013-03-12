@@ -1,28 +1,31 @@
 === Easy Add Thumbnail ===
 Contributors: samuelaguilera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8ER3Y2THBMFV6
-Tags: thumbnail, thumbnails
+Tags: thumbnail, thumbnails, featured image, automatic thumbail, automatic feature image
 Requires at least: 2.9
-Tested up to: 3.5
+Tested up to: 3.5.1
 Stable tag: 1.0.1
+License: GPL2
 
-Checks if you defined the post thumbnail, and if not it sets the thumbnail to the first uploaded image for that post. So easy like that...
+Automatically sets the featured image (previously post thumbnail) to the first uploaded image to the post. So easy like that...
 
 == Description ==
 
-Checks if you defined the post thumbnail, and if not it sets the thumbnail to the first uploaded image for that post. So easy like that...
+Checks if you defined the featured image (previously post thumbnail), and if not it automatically sets the featured image to the first uploaded image for that post. So easy like that...
 
 It does his job in two cases:
 
-1. Dinamically, for old published posts, the thumbnails are sets only when needed to show them in the frontend. This means that the thumbnail is set (only first time) when a visitor loads the page where it needs to be shown.
+1. Dinamically, for old published posts, the featured imagen are sets only when needed to show them in the frontend. This means that the featured image is set (only first time) when a visitor loads the page where it needs to be shown.
 
-2. For new posts, it sets the thumbnail just in the publishing process.
+2. For new posts, it sets the featured image just in the publishing process.
 
 No options page to setup, simply install and activate.
 
+The plugin uses only WordPress standard functions to set the featured image (just the same as you set it manually). And this requires to have attached/uploaded one image to the post. If there's not any image attached to the post, this plugin can't help you.
+
 = Features =
 
-* Simply avoids you to set the post thumbnail one by one to every post if you uploaded an image when you did the post.
+* Simply avoids you to set the featured image one by one to every post if you uploaded an image when you did the post.
 
 = Requirements =
 
@@ -40,13 +43,25 @@ No options page to setup, simply install and activate.
 
 No, because this plugin uses the post thumbail function added on WordPress 2.9.
 
+= Can I use this plugin for setting featured image using some image not attached to the post? =
+
+No. This plugin uses only standard WordPress functions to set the featured image. And using this standard (and friendly) method WordPress simply has not any knowing about images not attached to the post.
+
+= Is the post thumbnail and featured image the same? =
+
+Yes. When I released first version of this plugin, this featured was named as [post thumbnails](http://codex.wordpress.org/Post_Thumbnails), but later WordPress team decided to change the name to "featured image".
+
+In fact, WordPress core functions for featured image, still uses original [thumbnail](http://codex.wordpress.org/Function_Reference/the_post_thumbnail) names.
+
+That's because the plugin name (that can't be changed in the Extend directory without having issues) says "thumbnail".
+
 = Why you did this plugin? =
 
-I did it to fullfil the needs of one of my customers.
+I did it to fullfil the needs of many of my WordPress maintenance service customers.
 
 = Are you planning to add more features? =
 
-At first not, but who knows...
+At first not. The main and only purpose of this plugins is to do what it already does right now.
 
 == Changelog ==
 
