@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: thumbnail, thumbnails, featured image, automatic thumbail, automatic feature image
 Requires at least: 2.9
 Tested up to: 3.5.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPL2
 
 Automatically sets the featured image (previously post thumbnail) to the first uploaded image to the post. So easy like that...
