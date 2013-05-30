@@ -15,13 +15,13 @@ Checks if you defined the featured image (previously post thumbnail), and if not
 
 It does his job in two cases:
 
-1. Dinamically, for old published posts, the featured imagen are sets only when needed to show them in the frontend. This means that the featured image is set (only first time) when a visitor loads the page where it needs to be shown.
+1. Dinamically, for old published posts, the featured images are sets only when needed to show them in the frontend. This means that the featured image is set (only first time) when a visitor loads the page where it needs to be shown.
 
 2. For new posts, it sets the featured image just in the publishing process.
 
 No options page to setup, simply install and activate.
 
-The plugin uses only WordPress standard functions to set the featured image (just the same as you set it manually). And this requires to have attached/uploaded one image to the post. If there's not any image attached to the post, this plugin can't help you.
+The plugin uses only WordPress standard functions to set the featured image (just the same as you set it manually). And this requires to have attached/uploaded at least one image to the post. If there's not any image attached to the post, this plugin can't help you.
 
 = Features =
 
@@ -46,6 +46,14 @@ No, because this plugin uses the post thumbail function added on WordPress 2.9.
 = Can I use this plugin for setting featured image using some image not attached to the post? =
 
 No. This plugin uses only standard WordPress functions to set the featured image. And using this standard (and friendly) method WordPress simply has not any knowing about images not attached to the post.
+
+= My theme is showing big images instead of thumbnail sizes, what happens? =
+
+As stated above this plugin uses standard WordPress method to set the featured image, this does not include any size information. **The size used by your theme for displaying image thumbnails depends totally on how your theme was coded.**
+
+Contact to your theme author for support if you're having this problem.
+
+You can find more information about how to properly show thumbnails in your theme on codex reference for [the_post_thumbnail](http://codex.wordpress.org/Function_Reference/the_post_thumbnail) (check 'Thumbnail Sizes' section) and [set_post_thumbnail_size](http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size) functions.
 
 = Is the post thumbnail and featured image the same? =
 
