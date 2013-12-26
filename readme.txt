@@ -2,16 +2,16 @@
 Contributors: samuelaguilera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8ER3Y2THBMFV6
 Tags: thumbnail, thumbnails, featured image, automatic thumbail, automatic feature image
-Requires at least: 2.9
-Tested up to: 3.5.1
-Stable tag: 1.0.2
+Requires at least: 3.7
+Tested up to: 3.8
+Stable tag: 1.1
 License: GPL2
 
-Automatically sets the featured image (previously post thumbnail) to the first uploaded image to the post. So easy like that...
+Automatically sets the featured image (previously named post thumbnail) to the first uploaded image into the post. So easy like that...
 
 == Description ==
 
-Checks if you defined the featured image (previously post thumbnail), and if not it automatically sets the featured image to the first uploaded image for that post. So easy like that...
+Checks if you defined the featured image (previously named post thumbnail), and if not it sets the featured image to the first uploaded image into that post. So easy like that...
 
 It does his job in two cases:
 
@@ -21,7 +21,7 @@ It does his job in two cases:
 
 No options page to setup, simply install and activate.
 
-The plugin uses only WordPress standard functions to set the featured image (just the same as you set it manually). And this requires to have attached/uploaded at least one image to the post. If there's not any image attached to the post, this plugin can't help you.
+The plugin uses only WordPress standard functions to set the featured image (just the same as you set it manually). And this requires to have attached/uploaded at least one image into the post. If there's not any image attached to the post, this plugin can't help you.
 
 = Features =
 
@@ -29,7 +29,7 @@ The plugin uses only WordPress standard functions to set the featured image (jus
 
 = Requirements =
 
-* WordPress 2.9 or higher.
+* WordPress 3.7 or higher.
     	
 == Installation ==
 
@@ -39,9 +39,9 @@ The plugin uses only WordPress standard functions to set the featured image (jus
   
 == Frequently Asked Questions ==
 
-= Will this plugin works in WordPress older than 2.9? =
+= Will this plugin works in WordPress older than 3.7? =
 
-No, because this plugin uses the post thumbail function added on WordPress 2.9.
+WordPress installs below 3.7 are not supported. But you can use [Easy Add Thumbnail 1.0.2](http://downloads.wordpress.org/plugin/easy-add-thumbnail.1.0.2.zip) if you use WordPress 2.9 or higher 
 
 = Can I use this plugin for setting featured image using some image not attached to the post? =
 
@@ -57,7 +57,7 @@ You can find more information about how to properly show thumbnails in your them
 
 = Is the post thumbnail and featured image the same? =
 
-Yes. When I released first version of this plugin, this featured was named as [post thumbnails](http://codex.wordpress.org/Post_Thumbnails), but later WordPress team decided to change the name to "featured image".
+Yes. When I released first version of this plugin years ago, featured images was named as [post thumbnails](http://codex.wordpress.org/Post_Thumbnails), but later WordPress team decided to change the name to "featured image".
 
 In fact, WordPress core functions for featured image, still uses original [thumbnail](http://codex.wordpress.org/Function_Reference/the_post_thumbnail) names.
 
@@ -73,6 +73,11 @@ At first not. The main and only purpose of this plugins is to do what it already
 
 == Changelog ==
 
+= 1.1 =
+
+* Changed plugin code to be WordPres 3.7 or higher compatible. So now WordPress 3.7 or higher is required and older WordPress versions are not supported.
+* Cleanup some code not needed after raising min. required version to 3.7 
+
 = 1.0.2 =
 
 * When updating the readme.txt I copied by error another plugin readme to trunk, causing the plugin closed by WordPress.org staff. This release is only to fix the mistake made with readme as requested by WordPress.org staff. Sorry!!
@@ -84,3 +89,9 @@ At first not. The main and only purpose of this plugins is to do what it already
 = 1.0 =
 
 * Initial release.
+
+== Upgrade Notice ==
+
+= 1.1 =
+
+* This upgrade requires WordPress 3.7 or higher!
