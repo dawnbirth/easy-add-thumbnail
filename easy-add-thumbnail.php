@@ -7,7 +7,6 @@
 * Version: 1.1
 * Author URI: http://www.samuelaguilera.com
 * Requires at least: 3.7
-* Tested up to: 3.8
 */
 
 /*

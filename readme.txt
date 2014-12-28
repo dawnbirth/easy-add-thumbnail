@@ -47,6 +47,12 @@ WordPress installs below 3.7 are not supported. But you can use [Easy Add Thumbn
 
 No. This plugin uses only standard WordPress functions to set the featured image. And using this standard (and friendly) method WordPress simply has not any knowing about images not attached to the post.
 
+= How can I check if a post has "attached" images? =
+
+In that post edit screen, click the "Add Media button", then click to "Media Library" tab, and select "Uploaded to this post" in the dropdown, you must see at least one image. If you see the "No items found." message, that means that your images were not uploaded within that post. And therefore, the plugin can't use any image to set as feature image.
+
+If you can see images when selecting "Uploaded to this post" but the plugin is not using it for feature image. You need to try for theme/plugins conflicting. Try using a WordPress default theme (i.e. Twenty Fifteen) and disabling all other plugins. 
+
 = My theme is showing big images instead of thumbnail sizes, what happens? =
 
 As stated above this plugin uses standard WordPress method to set the featured image, this does not include any size information. **The size used by your theme for displaying image thumbnails depends totally on how your theme was coded.**
