@@ -3,13 +3,16 @@ Contributors: samuelaguilera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8ER3Y2THBMFV6
 Tags: thumbnail, thumbnails, featured image, automatic thumbail, automatic feature image
 Requires at least: 3.7
-Tested up to: 4.1
+Tested up to: 4.2.1
 Stable tag: 1.1
 License: GPL2
 
 Automatically sets the featured image (previously named post thumbnail) to the first uploaded image into the post. So easy like that...
 
 == Description ==
+
+**NOTE: This plugin functionality is guaranteed by more than 10,000 active installs. But before install this plugin bear in mind that its only purpose is to ADD the thumbnail for you (using same method that WP core uses, no plugin data is added), it does not remove ANYTHING after deactivation.
+Before asking for support please read [FAQ](https://wordpress.org/plugins/easy-add-thumbnail/faq/) and [this support thread](https://wordpress.org/support/topic/please-read-before-posting-4)**
 
 Checks if you defined the featured image (previously named post thumbnail), and if not it sets the featured image to the first uploaded image into that post. So easy like that...
 
