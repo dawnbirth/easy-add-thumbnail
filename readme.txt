@@ -7,24 +7,28 @@ Tested up to: 4.2.1
 Stable tag: 1.1
 License: GPL2
 
-Automatically sets the featured image (previously named post thumbnail) to the first uploaded image into the post. So easy like that...
+Automatically sets the featured image to the first uploaded image into the post (any post type with thumbnail support). So easy like that...
 
 == Description ==
 
-**NOTE: This plugin functionality is guaranteed by more than 10,000 active installs. But before install this plugin bear in mind that its only purpose is to ADD the thumbnail for you (using same method that WP core uses, no plugin data is added), it does not remove ANYTHING after deactivation.
+**NOTE: This plugin functionality is guaranteed by more than 10,000 active installs. But before install this plugin bear in mind that its only purpose is to ADD the thumbnail for you (in the same way that you would do using WP editor), it does not remove ANYTHING after deactivation.
 Before asking for support please read [FAQ](https://wordpress.org/plugins/easy-add-thumbnail/faq/) and [this support thread](https://wordpress.org/support/topic/please-read-before-posting-4)**
 
-Checks if you defined the featured image (previously named post thumbnail), and if not it sets the featured image to the first uploaded image into that post. So easy like that...
+Checks if you defined the featured image (previously named post thumbnail), and if not it sets the featured image to the first uploaded image into that post (any post type except pages). So easy like that...
 
-It does his job in two cases:
+= How it works? =
 
-1. Dinamically, for old published posts, the featured images are sets only when needed to show them in the frontend. This means that the featured image is set (only first time) when a visitor loads the page where it needs to be shown.
+1. Dinamically, for old published posts, the featured images are set only when needed to show them in the frontend. This means that the featured image is set (only first time) when a visitor loads the page where it needs to be shown.
 
-2. For new posts, it sets the featured image just in the publishing process.
+2. For new posts, the featured image is set in the publishing process.
 
 No options page to setup, simply install and activate.
 
-The plugin uses only WordPress standard functions to set the featured image (just the same as you set it manually). And this requires to have attached/uploaded at least one image into the post. If there's not any image attached to the post, this plugin can't help you.
+Easy Add Thumbnail don't add any plugin data to your WordPress database. It simply add the _thumbnail_id meta key with the ID of the attachment to be used as feature image (just the same that WordPress does when you set it manually).
+
+Therefore it requires to have attached/uploaded at least one image into the post. If there's not any image attached to the post, this plugin can't help you.
+
+Easy Add Thumbnail has not any control over how your featured image is displayed in your site, **the display of the featured image in your site is TOTALLY controlled by your theme**, this includes size, position, display it or not...
 
 = Features =
 
@@ -81,6 +85,10 @@ I did it to fullfil the needs of many of my WordPress maintenance service custom
 At first not. The main and only purpose of this plugins is to do what it already does right now.
 
 == Changelog ==
+
+= 1.1.1 =
+
+* Added easy_add_thumbnail_exclude_types filter to allow excluding post types
 
 = 1.1 =
 
