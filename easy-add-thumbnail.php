@@ -4,7 +4,7 @@
 * Plugin URI: http://wordpress.org/extend/plugins/easy-add-thumbnail/
 * Description: Checks if you defined the featured image, and if not it sets the featured image to the first uploaded image into that post. So easy like that...
 * Author: Samuel Aguilera
-* Version: 1.1
+* Version: 1.1.1
 * Author URI: http://www.samuelaguilera.com
 * Requires at least: 3.7
 */
@@ -27,35 +27,45 @@ if ( function_exists( 'add_theme_support' ) ) {
 
 add_theme_support( 'post-thumbnails' ); // This should be in your theme. But we add this here because this way we can have featured images before swicth to a theme that supports them.
       
-      function easy_add_thumbnail($post) {
+function easy_add_thumbnail($post) {
           
-          $already_has_thumb = has_post_thumbnail();
-         
-              if (!$already_has_thumb)  {
+    $already_has_thumb = has_post_thumbnail();
+    $post_type = get_post_type( $post->ID );    
+    $exclude_types = array('');
+    $exclude_types = apply_filters( 'eat_exclude_types', $exclude_types );
 
-              $attached_image = get_children( "order=ASC&post_parent=$post->ID&post_type=attachment&post_mime_type=image&numberposts=1" );
+    // do nothing if the post has already a featured image set
+    if ( $already_has_thumb ) {
+    	return;
+    }
 
-                          if ($attached_image) {
+	// do the job if the post is not from an excluded type			           
+    if ( ! in_array( $post_type, $exclude_types ) )  {
 
-                            $attachment_values = array_values($attached_image);
-                            $first_child_image = $attachment_values[0];
-                                                    
-                                add_post_meta($post->ID, '_thumbnail_id', $first_child_image->ID, true);                                 
-                        
-                           }
+        // get first attached image
+        $attached_image = get_children( "order=ASC&post_parent=$post->ID&post_type=attachment&post_mime_type=image&numberposts=1" );
+
+	    if ( $attached_image ) {
+
+	        $attachment_values = array_values( $attached_image );
+	        // add attachment ID                                            
+	        add_post_meta( $post->ID, '_thumbnail_id', $attachment_values[0]->ID, true );                                 
+	                        
+	    }
                            
                          
-                        }
-      }
+    }
 
-  add_action('the_post', 'easy_add_thumbnail');
+}
+
+// set featured image before post is displayed (for old posts)
+add_action('the_post', 'easy_add_thumbnail');
  
-  // hooks added to set the thumbnail when publishing too
-  add_action('new_to_publish', 'easy_add_thumbnail');
-  add_action('draft_to_publish', 'easy_add_thumbnail');
-  add_action('pending_to_publish', 'easy_add_thumbnail');
-  add_action('future_to_publish', 'easy_add_thumbnail');
-
+// hooks added to set the thumbnail when publishing too
+add_action('new_to_publish', 'easy_add_thumbnail');
+add_action('draft_to_publish', 'easy_add_thumbnail');
+add_action('pending_to_publish', 'easy_add_thumbnail');
+add_action('future_to_publish', 'easy_add_thumbnail');
 
 }
 

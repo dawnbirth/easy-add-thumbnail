@@ -4,35 +4,33 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: thumbnail, thumbnails, featured image, automatic thumbail, automatic feature image
 Requires at least: 3.7
 Tested up to: 4.2.1
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: GPL2
 
-Automatically sets the featured image to the first uploaded image into the post (any post type with thumbnail support). So easy like that...
+Automatically sets the featured image to the first image uploaded into the post (any post type with thumbnail support). So easy like that...
 
 == Description ==
 
-**NOTE: This plugin functionality is guaranteed by more than 10,000 active installs. But before install this plugin bear in mind that its only purpose is to ADD the thumbnail for you (in the same way that you would do using WP editor), it does not remove ANYTHING after deactivation.
+**NOTE: This plugin functionality is guaranteed by more than 10,000 active installs. But before install this plugin bear in mind that its only purpose is to ADD the feature image ID to your post (in the same way that you would do using WP editor), it does not remove ANYTHING after deactivation.
 Before asking for support please read [FAQ](https://wordpress.org/plugins/easy-add-thumbnail/faq/) and [this support thread](https://wordpress.org/support/topic/please-read-before-posting-4)**
-
-Checks if you defined the featured image (previously named post thumbnail), and if not it sets the featured image to the first uploaded image into that post (any post type except pages). So easy like that...
 
 = How it works? =
 
+Checks if the post (any post type with thumbnail support, including pages) has already a featured image associated, and if not sets it using one of the following methods:
+
 1. Dinamically, for old published posts, the featured images are set only when needed to show them in the frontend. This means that the featured image is set (only first time) when a visitor loads the page where it needs to be shown.
 
-2. For new posts, the featured image is set in the publishing process.
+2. For new content, the featured image is set in the publishing process.
 
-No options page to setup, simply install and activate.
+**No options page to setup**, simply install and activate.
 
-Easy Add Thumbnail don't add any plugin data to your WordPress database. It simply add the _thumbnail_id meta key with the ID of the attachment to be used as feature image (just the same that WordPress does when you set it manually).
+If you want to exclude certain post type (e.g. pages), you can do it by using a filter. See [FAQ](https://wordpress.org/plugins/easy-add-thumbnail/faq/) for more details.
 
-Therefore it requires to have attached/uploaded at least one image into the post. If there's not any image attached to the post, this plugin can't help you.
+**Easy Add Thumbnail don't add any plugin data** to your WordPress database. It simply adds the _thumbnail_id meta key with the ID of the attachment to be used as feature image (just the same that WordPress does when you set it manually).
 
-Easy Add Thumbnail has not any control over how your featured image is displayed in your site, **the display of the featured image in your site is TOTALLY controlled by your theme**, this includes size, position, display it or not...
+Therefore it requires to have attached/uploaded at least one image to the post. If there's not any image attached to the post, this plugin can't help you.
 
-= Features =
-
-* Simply avoids you to set the featured image one by one to every post if you uploaded an image when you did the post.
+Easy Add Thumbnail has not any control over how/when/where your featured image is displayed in your site, **the display of the featured image in your site is TOTALLY controlled by your theme**, this includes size, position, display it or not...
 
 = Requirements =
 
@@ -42,13 +40,9 @@ Easy Add Thumbnail has not any control over how your featured image is displayed
 
 * Extract the zip file and just drop the contents in the <code>wp-content/plugins/</code> directory of your WordPress installation (or install it directly from your dashboard) and then activate the Plugin from Plugins page.
 
-<strong>IMPORTANT!</strong> Remember that your theme must support the use of thumbnails, if not, the thumbnails will be added but you'll not see them in your site.
+<strong>IMPORTANT!</strong> Remember that your theme must support the use of thumbnails, if not, the thumbnail information will be set in the database but you'll not see them in your site.
   
 == Frequently Asked Questions ==
-
-= Will this plugin works in WordPress older than 3.7? =
-
-WordPress installs below 3.7 are not supported. But you can use [Easy Add Thumbnail 1.0.2](http://downloads.wordpress.org/plugin/easy-add-thumbnail.1.0.2.zip) if you use WordPress 2.9 or higher 
 
 = Can I use this plugin for setting featured image using some image not attached to the post? =
 
@@ -68,6 +62,28 @@ Contact to your theme author for support if you're having this problem.
 
 You can find more information about how to properly show thumbnails in your theme on codex reference for [the_post_thumbnail](http://codex.wordpress.org/Function_Reference/the_post_thumbnail) (check 'Thumbnail Sizes' section) and [set_post_thumbnail_size](http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size) functions.
 
+= How can I exclude pages or other post types ? = 
+
+If you don't want to use Easy Add Thumbnail for your pages or any other post type, you can exclude them by simply adding a little snippet of code to your theme functions.php file.
+The following example will exclude pages:
+
+`add_filter ('eat_exclude_types', 'my_excluded_types', 10, 1);
+function my_excluded_types ( $exclude_types ){
+	$exclude_types[] = 'page'; 
+	return $exclude_types;
+}`
+
+If you want to exclude a custom post type you need to know the value of 'name' used in [register_post_type()](https://codex.wordpress.org/Function_Reference/register_post_type) function for registering that post type.
+e.g. If you have a custom post type and its 'name' is 'book' the you'll use:
+
+`add_filter ('eat_exclude_types', 'my_excluded_types', 10, 1);
+function my_excluded_types ( $exclude_types ){
+	$exclude_types[] = 'book'; 
+	return $exclude_types;
+}`
+
+If you want to exclude more than one post type just duplicate the $exclude_types[] line for each one.
+
 = Is the post thumbnail and featured image the same? =
 
 Yes. When I released first version of this plugin years ago, featured images was named as [post thumbnails](http://codex.wordpress.org/Post_Thumbnails), but later WordPress team decided to change the name to "featured image".
@@ -76,19 +92,16 @@ In fact, WordPress core functions for featured image, still uses original [thumb
 
 That's because the plugin name (that can't be changed in the Extend directory without having issues) says "thumbnail".
 
-= Why you did this plugin? =
+= Will this plugin works in WordPress older than 3.7? =
 
-I did it to fullfil the needs of many of my WordPress maintenance service customers.
-
-= Are you planning to add more features? =
-
-At first not. The main and only purpose of this plugins is to do what it already does right now.
+WordPress installs below 3.7 are not supported. But you can use [Easy Add Thumbnail 1.0.2](http://downloads.wordpress.org/plugin/easy-add-thumbnail.1.0.2.zip) if you use WordPress 2.9 or higher 
 
 == Changelog ==
 
 = 1.1.1 =
 
-* Added easy_add_thumbnail_exclude_types filter to allow excluding post types
+* Added 'eat_exclude_types' filter to allow excluding post types from the process
+* Minor code cleanup and more comments added
 
 = 1.1 =
 
