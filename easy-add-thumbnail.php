@@ -51,11 +51,36 @@ function easy_add_thumbnail($post) {
 	        // add attachment ID                                            
 	        add_post_meta( $post->ID, '_thumbnail_id', $attachment_values[0]->ID, true );                                 
 	                        
-	    }
+	    } else {
+			// Get first inserted image ID
+			$inserted_image = easy_get_the_image_id_by_scan( $post->ID );
+			
+			if ( $inserted_image ) {
+				
+				add_post_meta( $post->ID, '_thumbnail_id', $inserted_image, true ); 
+				
+			}
+			
+		}
                            
                          
     }
 
+}
+
+/**
+* Search post content for "wp-image-{$ID}" class to get the attachment ID from it.
+*/
+function easy_get_the_image_id_by_scan( $post_id ) {
+
+	/* Search the post's content for the image id. */
+	preg_match_all( '|wp-image-(.*?)"|i', get_post_field( 'post_content', $post_id ), $matches );
+
+	/* If there is a match for the image, return its ID. */
+	if ( isset( $matches ) && !empty( $matches[1][0] ) )
+		return $matches[1][0];
+
+	return false;
 }
 
 // set featured image before post is displayed (for old posts)
